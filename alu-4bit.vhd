@@ -13,23 +13,24 @@ use ieee.numeric_std.all;
 --110 -> Result: 15 - nib_2        || Flag: 0 || Desc: Bitwise inverse nib_2
 --111 -> Result: nib_1 + nib_2 + 1 || Flag: Cout = Overflow || Desc: Addition
 
-entity alu is
+entity ALU is
 	port(
-		nib_1 : in std_logic_vector(3 downto 0);
-		nib_2 : in std_logic_vector(3 downto 0);
+		nib_1 : in std_logic_vector(3 downto 0); --4-bit input for first nibble
+		nib_2 : in std_logic_vector(3 downto 0); --4-bit input for second nibble
 		cout : out std_logic;
 		flag : out std_logic; 
-		result : out std_logic_vector(3 downto 0);
+		result : out std_logic_vector(3 downto 0); --4-bit out
 	);
-end entity alu;
+end entity ALU;
 
+--what it looks like
 --		  +---------------+
 --nib_1(3:0)    ->|		  |->cout
 --nib_2(3:0)    ->|	 ALU      |->flag
 --operation(2:0)->|               |->result(3:0)
 --		  +---------------+
 
-architecture behavior of alu is
+architecture behavior of ALU is
 	signal temp: std_logic_vector(4 downto 0);
 begin
 --start

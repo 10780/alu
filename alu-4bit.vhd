@@ -33,7 +33,7 @@ end entity ALU;
 architecture behavior of ALU is
 	signal temp: std_logic_vector(4 downto 0);
 begin
---start
+--start implementation
 	process(nib_1, nib_2, operation, temp) is
 	begin
 		flag <= '0'; --start with flag == 0

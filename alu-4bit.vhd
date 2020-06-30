@@ -23,11 +23,11 @@ entity alu is
 	);
 end entity alu;
 
---			      +---------------+
---nib_1(3:0)    ->|			      |->cout
---nib_2(3:0)    ->|		 ALU      |->flag
+--		  +---------------+
+--nib_1(3:0)    ->|		  |->cout
+--nib_2(3:0)    ->|	 ALU      |->flag
 --operation(2:0)->|               |->result(3:0)
---			      +---------------+
+--		  +---------------+
 
 architecture behavior of alu is
 	signal temp: std_logic_vector(4 downto 0);
